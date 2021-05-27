@@ -38,4 +38,24 @@ public class AssicuratoServiceImpl implements AssicuratoService {
 	public void rimuovi(Assicurato assicuratoInstance) {
 		repository.delete(assicuratoInstance);
 	}
+
+	@Override
+	public Assicurato trovaAssicurato(Assicurato assicuratoInstance) {
+		String nome = assicuratoInstance.getNome();
+		String cognome = assicuratoInstance.getCognome();
+		String codFis = assicuratoInstance.getCodiceFiscale();
+		return repository.findByNomeAndCognomeAndCodiceFiscale(nome, cognome, codFis).orElse(null);
+
+	}
+
+	@Override
+	public Assicurato aggiornaSinistri(Assicurato assicuratoInstance) {
+		String nome = assicuratoInstance.getNome();
+		String cognome = assicuratoInstance.getCognome();
+		String codFis = assicuratoInstance.getCodiceFiscale();
+		Assicurato assicuratoTemp = repository.findByNomeAndCognomeAndCodiceFiscale(nome, cognome, codFis).get();
+		assicuratoTemp.setNuoviSinistri(assicuratoTemp.getNuoviSinistri().add(assicuratoInstance.getNuoviSinistri()));
+
+		return repository.save(assicuratoTemp);
+	}
 }

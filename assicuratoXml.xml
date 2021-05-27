@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<assicurati>
+    <assicurato>
+        <nome>rocco</nome>
+        <cognome>sblocco</cognome>
+        <datanascita>1990-12-15</datanascita>
+        <nuovisinistri>2</nuovisinistri>
+        <codicefiscale>wervki45ki4kj4km</codicefiscale>
+    </assicurato>
+    <assicurato>
+        <nome>piermauro</nome>
+        <cognome>nesi</cognome>
+        <datanascita>1985-12-15</datanascita>
+        <nuovisinistri>1</nuovisinistri>
+        <codicefiscale>wereungl9i4kj4km</codicefiscale>
+    </assicurato>
+</assicurati>

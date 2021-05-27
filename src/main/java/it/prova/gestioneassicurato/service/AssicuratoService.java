@@ -15,4 +15,8 @@ public interface AssicuratoService {
 	Assicurato inserisciNuovo(Assicurato assicuratoInstance);
 	
 	void rimuovi(Assicurato assicuratoInstance);
+
+	Assicurato trovaAssicurato(Assicurato assicuratoInstance);
+
+	Assicurato aggiornaSinistri(Assicurato assicuratoInstance);
 }

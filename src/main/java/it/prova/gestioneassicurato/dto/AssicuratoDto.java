@@ -1,5 +1,6 @@
 package it.prova.gestioneassicurato.dto;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
@@ -22,7 +23,7 @@ public class AssicuratoDto {
 	private Date dataNascita;
 
 	@NotNull(message = "{nuoviSinistri.notull}")
-	private Integer nuoviSinistri;
+	private BigInteger nuoviSinistri;
 
 	@NotBlank(message = "{codiceFiscale.notblank}")
 	@Size(max = 16, min = 16, message = "{codiceFiscale.sizeproblem}")
@@ -34,7 +35,7 @@ public class AssicuratoDto {
 	public AssicuratoDto(@NotBlank(message = "{nome.notblank}") String nome,
 			@NotBlank(message = "{cognome.notblank}") String cognome,
 			@NotNull(message = "{dataNascita.notnull}") Date dataNascita,
-			@NotNull(message = "{nuoviSinistri.notull}") Integer nuoviSinistri,
+			@NotNull(message = "{nuoviSinistri.notull}") BigInteger nuoviSinistri,
 			@NotBlank(message = "{codiceFiscale.notblank}") @Size(max = 16, min = 16, message = "{codiceFiscale.sizeproblem}") String codiceFiscale) {
 		this.nome = nome;
 		this.cognome = cognome;
@@ -46,7 +47,7 @@ public class AssicuratoDto {
 	public AssicuratoDto(Long id, @NotBlank(message = "{nome.notblank}") String nome,
 			@NotBlank(message = "{cognome.notblank}") String cognome,
 			@NotNull(message = "{dataNascita.notnull}") Date dataNascita,
-			@NotNull(message = "{nuoviSinistri.notull}") Integer nuoviSinistri,
+			@NotNull(message = "{nuoviSinistri.notull}") BigInteger nuoviSinistri,
 			@NotBlank(message = "{codiceFiscale.notblank}") @Size(max = 16, min = 16, message = "{codiceFiscale.sizeproblem}") String codiceFiscale) {
 		this.id = id;
 		this.nome = nome;
@@ -88,11 +89,11 @@ public class AssicuratoDto {
 		this.dataNascita = dataNascita;
 	}
 
-	public Integer getNuoviSinistri() {
+	public BigInteger getNuoviSinistri() {
 		return nuoviSinistri;
 	}
 
-	public void setNuoviSinistri(Integer nuoviSinistri) {
+	public void setNuoviSinistri(BigInteger nuoviSinistri) {
 		this.nuoviSinistri = nuoviSinistri;
 	}
 
@@ -109,7 +110,7 @@ public class AssicuratoDto {
 	}
 
 	public static AssicuratoDto createAssicuratoDtoInstanceFromParams(String nomeInput, String cognomeInput,
-			Date dataNascitaInput, Integer nuoviSinistri, String codiceFiscale) {
+			Date dataNascitaInput, BigInteger nuoviSinistri, String codiceFiscale) {
 
 		AssicuratoDto result = new AssicuratoDto(nomeInput, cognomeInput, dataNascitaInput, nuoviSinistri,
 				codiceFiscale);

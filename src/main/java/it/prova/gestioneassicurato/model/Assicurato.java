@@ -1,5 +1,6 @@
 package it.prova.gestioneassicurato.model;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -36,7 +37,7 @@ public class Assicurato {
 	@NotNull(message = "{nuoviSinistri.notnull}")
 	@DecimalMin("0")
 	@Column(name = "nuovi_sinistri")
-	private Integer nuoviSinistri;
+	private BigInteger nuoviSinistri;
 
 	@NotBlank(message = "{codiceFiscale.notblank}")
 	@Column(name = "codice_fiscale")
@@ -48,7 +49,7 @@ public class Assicurato {
 	public Assicurato(@NotBlank(message = "{nome.notblank}") String nome,
 			@NotBlank(message = "{cognome.notblank}") String cognome,
 			@NotNull(message = "{dataNascita.notnull}") Date dataNascita,
-			@NotNull(message = "{nuoviSinistri.notnull}") @DecimalMin("0") Integer nuoviSinistri,
+			@NotNull(message = "{nuoviSinistri.notnull}") @DecimalMin("0") BigInteger nuoviSinistri,
 			@NotBlank(message = "{codiceFiscale.notblank}") String codiceFiscale) {
 		super();
 		this.nome = nome;
@@ -61,7 +62,7 @@ public class Assicurato {
 	public Assicurato(Long id, @NotBlank(message = "{nome.notblank}") String nome,
 			@NotBlank(message = "{cognome.notblank}") String cognome,
 			@NotNull(message = "{dataNascita.notnull}") Date dataNascita,
-			@NotNull(message = "{nuoviSinistri.notnull}") @DecimalMin("0") Integer nuoviSinistri,
+			@NotNull(message = "{nuoviSinistri.notnull}") @DecimalMin("0") BigInteger nuoviSinistri,
 			@NotBlank(message = "{codiceFiscale.notblank}") String codiceFiscale) {
 		this.id = id;
 		this.nome = nome;
@@ -103,12 +104,12 @@ public class Assicurato {
 		this.dataNascita = dataNascita;
 	}
 
-	public Integer getNuoviSinistri() {
+	public BigInteger getNuoviSinistri() {
 		return nuoviSinistri;
 	}
 
-	public void setNuoviSinistri(Integer nuoviSinistri) {
-		this.nuoviSinistri = nuoviSinistri;
+	public void setNuoviSinistri(BigInteger bigInteger) {
+		this.nuoviSinistri = bigInteger;
 	}
 
 	public String getCodiceFiscale() {
